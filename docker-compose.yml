@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  web:
+    build: ./locallibrary
+    command: python manage.py runserver 0.0.0.0:9000
+    volumes:
+      - ./app/:/usr/src/locallibrary/
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env.dev
+    
+    depends_on:
+      - db
+  db:
+    image: postgres:13.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=1111
+      - POSTGRES_DB=locallibrary_dev
+
+volumes:
+  postgres_data:
