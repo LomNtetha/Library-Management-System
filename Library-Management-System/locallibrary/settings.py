@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #SECRET_KEY = "django-insecure-to2#+6$5i+vjosf*n7j1f^jmonqu#_&xc)k-$8+u)n)+=ep&&d"
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-to2#+6$5i+vjosf*n7j1f^jmonqu#_&xc)k-$8+u)n)+=ep&&d')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['https://mighty-sea-09546.herokuapp.com/', '127.0.0.1','mighty-sea-09546.herokuapp.com']
