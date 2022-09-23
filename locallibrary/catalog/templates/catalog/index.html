@@ -1,0 +1,18 @@
+
+{% extends "catalog/base_generic.html" %}
+{% load static %}
+ 
+{% block content %}
+<h1>Local Libray Home</h1>
+<p>Welcome to LocalLibrary, developed by <em> Lumkile Ntetha</em>!</p>
+<h2> Dynamic Content </h2>
+<p> The library has the following record counts:</p>
+<ul>
+    <li><strong>Books:</strong>{{ num_books }}</li>
+    <li><strong>Copies:</strong>{{ num_instances }}</li>
+    <li><strong>Copies available:</strong>{{ num_instances_available }}</li>
+    <li><strong>Authors:</strong>{{ num_authors }}</li>
+    <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+
+</ul>
+{% endblock %}
