@@ -18,13 +18,13 @@ COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
 # copy entrypoint.sh
-#COPY ./entrypoint.sh .
-#RUN sed -i 's/\r$//g' /usr/src/locallibrary/entrypoint.sh
-#RUN chmod +x /usr/src/locallibrary/entrypoint.sh
+COPY ./entrypoint.sh .
+RUN sed -i 's/\r$//g' /usr/src/locallibrary/entrypoint.sh
+RUN chmod +x /usr/src/locallibrary/entrypoint.sh
 
 # copy project
 COPY . .
 
 
 # run entrypoint.sh
-#ENTRYPOINT ["/usr/src/locallibrary/entrypoint.sh"]
+ENTRYPOINT ["/usr/src/locallibrary/entrypoint.sh"]
