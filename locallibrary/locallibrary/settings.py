@@ -19,14 +19,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
+
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = "django-insecure-to2#+6$5i+vjosf*n7j1f^jmonqu#_&xc)k-$8+u)n)+=ep&&d"
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-to2#+6$5i+vjosf*n7j1f^jmonqu#_&xc)k-$8+u)n)+=ep&&d')
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
+DEBUG = int(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = ['https://mighty-sea-09546.herokuapp.com/', '127.0.0.1','mighty-sea-09546.herokuapp.com']
+# 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
+# For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
