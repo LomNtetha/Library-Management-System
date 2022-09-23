@@ -5,7 +5,7 @@ services:
     build: ./locallibrary
     command: python manage.py runserver 0.0.0.0:9000
     volumes:
-      - ./app/:/usr/src/locallibrary/
+      - ./locallibrary/:/usr/src/locallibrary/
     ports:
       - 9000:9000
     env_file:
