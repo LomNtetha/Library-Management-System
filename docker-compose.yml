@@ -7,7 +7,7 @@ services:
     volumes:
       - ./app/:/usr/src/locallibrary/
     ports:
-      - 8000:8000
+      - 9000:9000
     env_file:
       - ./.env.dev
     
