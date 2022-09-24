@@ -3,14 +3,14 @@ version: '3.9'
 services:
   web:
     build:
-      context: ./app
+      context: ./locallibrary
       dockerfile: Dockerfile.prod
-    command: gunicorn app.wsgi:application --bind 0.0.0.0:8000
+    command: gunicorn locallibrary.wsgi:application --bind 0.0.0.0:9000
     volumes:
-      - static_volume:/home/app/web/staticfiles
-      - media_volume:/home/app/web/mediafiles
+      - static_volume:/home/locallibrary/web/staticfiles
+      - media_volume:/home/locallibrary/web/mediafiles
     expose:
-      - 8000
+      - 9000
     env_file:
       - ./.env.prod
     depends_on:
@@ -24,10 +24,10 @@ services:
   nginx:
     build: ./nginx
     volumes:
-      - static_volume:/home/app/web/staticfiles
-      - media_volume:/home/app/web/mediafiles
+      - static_volume:/home/locallibrary/web/staticfiles
+      - media_volume:/home/locallibrary/web/mediafiles
     ports:
-      - 1337:80
+      - 5000:80
     depends_on:
       - web
 
