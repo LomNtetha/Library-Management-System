@@ -24,7 +24,7 @@ RUN flake8 --ignore=E501,F401 ./locallibrary
 
 # install dependencies '
 COPY ./requirements.txt .
-RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/app/wheels -r requirements.txt
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/locallibrary/wheels -r requirements.txt
 
 
 #########
@@ -38,7 +38,7 @@ FROM python:3.9.6-alpine
 RUN mkdir -p /home/locallibrary
 
 # create the app user
-RUN addgroup -S locallibrary && adduser -S app -G locallibrary
+RUN addgroup -S locallibrary && adduser -S locallibrary -G locallibrary
 
 # create the appropriate directories
 ENV HOME=/home/locallibrary
