@@ -119,11 +119,9 @@ TIME_ZONE = "Africa/Maseru"
 USE_I18N = True
 
 USE_TZ = True
-# The absolute path to the directory where collectstatic will collect static files for deployment.
+STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
-# The URL to use when referring to static files (where they will be served from)
-STATIC_URL = '/static/'
+# The absolute path to the directory where collectstatic will collect static files for deployment.
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
@@ -147,3 +145,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:5000'
+]
