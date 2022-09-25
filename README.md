@@ -8,7 +8,7 @@ The library management system is going to be dockerrize with docker composer, Po
 - https://mighty-sea-09546.herokuapp.com/admin
 - username:admin
 - password:1111
-## How to run The project Local on windows
+## How to run The project Local for Development
 
 To get started please ensure that python 3.8 or above is installed in your system
 
@@ -22,14 +22,7 @@ To get started please ensure that python 3.8 or above is installed in your syste
   cd Library-Management-System
   ```
 
-- Create virtual environment
-  ```
-  python -m venv env
-  ```
-- Activate the virtual environment
-  ```
-  env/Scripts/activate
-  ```
+
 
 - Install requirements file
   ```
@@ -50,6 +43,29 @@ To get started please ensure that python 3.8 or above is installed in your syste
   ```
   py manage.py runserver
   ```
+
+## How to run The project Local for Production with nginx and gunicorn
+- Bring the container down
+ ```
+  docker-compose -f docker-compose.prod.yml down -v
+  ```
+- Build and run the container 
+ ```
+  docker-compose -f docker-compose.prod.yml up -d --build
+  ```
+- Run migrations
+ ```
+ docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
+ ```
+- Create superuser
+ ```
+ docker-compose -f docker-compose.prod.yml exec web python manage.py createsuperuser
+ ```
+- organize static and media files to be serve by nginx
+ ```
+ docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --no-input --clear
+ ```
+
 
 ## How to push the project on cloud Heroku PAAS
 
