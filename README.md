@@ -50,7 +50,7 @@ To get started please ensure that python 3.8 or above is installed in your syste
  then exit
  ```
  \q
- ``
+ ```
 ## How to run The project Local for Production with nginx and gunicorn
 - Bring the container down
  ```
