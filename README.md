@@ -39,10 +39,10 @@ To get started please ensure that python 3.8 or above is installed in your syste
  docker-compose exec db psql --username=admin --dbname=locallibrary_dev
  ```
   ```
-  locallibrary_dev=# \l
+  \l
   ```
   ```
-   \c hello_django_dev
+   \c locallibrary_dev
    ```
  ```
  \dt
