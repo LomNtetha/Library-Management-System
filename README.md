@@ -2,7 +2,7 @@
 This is the basic library management system that is written with django class based function . The main goal of this system was to write  python django framework code that is clean and tested using  unit testing ,Test Driven Development.
 # new changes comming
 Project workflow CI/CD pipeline to be add soon , Either github actions or gitlab will be add as workflow for this project 
-## This system is tested and developed with
+
 ## project is live and running on heroku
 - live link: https://mighty-sea-09546.herokuapp.com/catalog/
 - Login admin creditials:
@@ -26,7 +26,7 @@ To get started please ensure that python 3.8 or above is installed in your syste
  ```
  docker-compose down -v
  ```
-- All entrypoint permissions to verify that PostgreSQL is healthy before applying the migrations for Development
+- All0w entrypoint permissions to verify that PostgreSQL is healthy before applying the migrations for Development
   ```
   chmod +x locallibrary/entrypoint.sh
   ```
@@ -78,7 +78,7 @@ To get started please ensure that python 3.8 or above is installed in your syste
   docker-compose -f docker-compose.prod.yml down -v
   ```
  
-- All entrypoint permissions to verify that PostgreSQL is healthy before applying the migrations for production
+- Allow entrypoint permissions to verify that PostgreSQL is healthy before applying the migrations for production
  ```
  chmod +x locallibrary/entrypoint.prod.sh
  ```
