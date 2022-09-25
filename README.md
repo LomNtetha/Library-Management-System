@@ -26,6 +26,10 @@ To get started please ensure that python 3.8 or above is installed in your syste
  ```
  docker-compose down -v
  ```
+- All entrypoint permissions to verify that PostgreSQL is healthy before applying the migrations for Development
+  ```
+  chmod +x locallibrary/entrypoint.sh
+  ```
 - Build the images and run the containers
   ```
   docker-compose up -d --build
@@ -54,6 +58,20 @@ To get started please ensure that python 3.8 or above is installed in your syste
  ```
  \q
  ```
+
+-  check that the volume was created as well by running
+  ```
+   docker volume inspect Library-Management-System_postgres_data
+   ```
+- Create superuser
+  ```
+  docker-compose exec web python manage.py createsuperuser
+  ```
+- collect static files
+ ```
+  docker-compose  exec web python manage.py collectstatic --no-input --clear
+  ```
+- You should be able to view the page at http://localhost:9000/catalog
 ## How to run The project Local for Production with nginx and gunicorn
 - Bring the container down
  ```
