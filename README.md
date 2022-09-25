@@ -2,6 +2,7 @@
 This is the basic library management system that is written with django class based function . The main goal of this system was to write  python django framework code that is clean and tested using  unit testing ,Test Driven Development.
 # new changes comming
 Project workflow CI/CD pipeline to be add soon , Either github actions or gitlab will be add as workflow for this project 
+## This system is tested and developed with
 ## project is live and running on heroku
 - live link: https://mighty-sea-09546.herokuapp.com/catalog/
 - Login admin creditials:
@@ -92,11 +93,18 @@ install heroku cli and git on you system and create  account on heroku
   heroku open
   ```
 
-## packages used 
+## Technology tools and python library used to develop this system
+- Ubuntu 22.04.1 LTS
+- Docker version 20.10.18, build b40c2f6
+- docker-compose version 1.29.2, build unknown
+- git version 2.34.1
 - python 3.10.2 local and python 3.10.6 on heroku
-- Django 4.1
-- Sqlite local and postgresql heroku
-- whitenoise  6.2.0 for static files
+- Django 4.1.1
+- postgresql
+- nginx web server
+- gunicorn 20.1.0 for http/https server request and WSGI server
+- flake8
+- Entrypoint shell
 - bootstrap 5
-- gunicorn 20.1.0 for http and https server request
+
  
