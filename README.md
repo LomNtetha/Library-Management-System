@@ -38,12 +38,15 @@ To get started please ensure that python 3.8 or above is installed in your syste
  ```
  docker-compose exec db psql --username=admin --dbname=locallibrary_dev
  ```
+ List databases
   ```
   \l
   ```
+  connected to database "locallibrary_dev" 
   ```
    \c locallibrary_dev
    ```
+ List relations
  ```
  \dt
  ```
