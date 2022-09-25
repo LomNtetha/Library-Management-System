@@ -1,7 +1,7 @@
 # Library-Management-System
 This is the basic library management system that is written with django class based function . The main goal of this system was to write  python django framework code that is clean and tested using  unit testing ,Test Driven Development.
 # new changes comming
-The library management system is going to be dockerrize with docker composer, PostgreSQL , Gunicorn and nginx 
+Project workflow CI/CD pipeline to be add soon , Either github actions or gitlab will be add as workflow for this project 
 ## project is live and running on heroku
 - live link: https://mighty-sea-09546.herokuapp.com/catalog/
 - Login admin creditials:
@@ -21,35 +21,12 @@ To get started please ensure that python 3.8 or above is installed in your syste
   ```
   cd Library-Management-System
   ```
-
-
-
-- Install requirements file
-  ```
-  pip install -r requirements.txt
-  ```
-
-- migrate Database
-  ```
-  py manage.py migrate
-  ```
-
-- Create super user
-  ```
-  py manage.py createsuperuser
-  ```
-
-- run the project
-  ```
-  py manage.py runserver
-  ```
-
 ## How to run The project Local for Production with nginx and gunicorn
 - Bring the container down
  ```
   docker-compose -f docker-compose.prod.yml down -v
   ```
-- All entrypoint permissions to verify that Postgres is healthy before applying the migrations for production
+- All entrypoint permissions to verify that PostgreSQL is healthy before applying the migrations for production
  ```
  chmod +x locallibrary/entrypoint.prod.sh
  ```
