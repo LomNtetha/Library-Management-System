@@ -49,6 +49,10 @@ To get started please ensure that python 3.8 or above is installed in your syste
  ```
   docker-compose -f docker-compose.prod.yml down -v
   ```
+- All entrypoint permissions to verify that Postgres is healthy before applying the migrations for production
+ ```
+ chmod +x locallibrary/entrypoint.prod.sh
+ ```
 - Build and run the container 
  ```
   docker-compose -f docker-compose.prod.yml up -d --build
@@ -65,7 +69,7 @@ To get started please ensure that python 3.8 or above is installed in your syste
  ```
  docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --no-input --clear
  ```
-
+- then visit: http://localhost:5000/catalog/
 
 ## How to push the project on cloud Heroku PAAS
 
