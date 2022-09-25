@@ -22,16 +22,46 @@ To get started please ensure that python 3.8 or above is installed in your syste
   ```
   cd Library-Management-System
   ```
+- Remove exisitng volumes
+ ```
+ docker-compose down -v
+ ```
+- Build the images and run the containers
+  ```
+  docker-compose up -d --build
+  ```
+- Run the migrations
+  ```
+  docker-compose exec web python manage.py migrate --noinput
+  ```
+- Ensure the default Django tables were created
+ ```
+ docker-compose exec db psql --username=admin --dbname=locallibrary_dev
+ ```
+  ```
+  locallibrary_dev=# \l
+  ```
+  ```
+   \c hello_django_dev
+   ```
+ ```
+ \dt
+ ```
+ then exit
+ ```
+ \q
+ ``
 ## How to run The project Local for Production with nginx and gunicorn
 - Bring the container down
  ```
   docker-compose -f docker-compose.prod.yml down -v
   ```
+ 
 - All entrypoint permissions to verify that PostgreSQL is healthy before applying the migrations for production
  ```
  chmod +x locallibrary/entrypoint.prod.sh
  ```
-- Build and run the container 
+- Build the images and run the containers
  ```
   docker-compose -f docker-compose.prod.yml up -d --build
   ```
@@ -93,12 +123,12 @@ install heroku cli and git on you system and create  account on heroku
   heroku open
   ```
 
-## Technology tools and python library used to develop this system
+## Technology tools and python packages used to develop this system
 - Ubuntu 22.04.1 LTS
 - Docker version 20.10.18, build b40c2f6
 - docker-compose version 1.29.2, build unknown
 - git version 2.34.1
-- python 3.10.2 local and python 3.10.6 on heroku
+- python 3
 - Django 4.1.1
 - postgresql
 - nginx web server
